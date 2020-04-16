@@ -1,0 +1,38 @@
+//Все это в MainActivity
+package com.example.emelianov6lab
+
+
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity(), View.OnClickListener {
+
+    var Abra: Button? = null
+    var Cadabra: Button? = null
+    var outerText: TextView? = null
+
+    //Создается 1 раз при запуске Activity
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        // находим View-элементы
+        Abra = findViewById<View>(R.id.abra) as Button
+        Cadabra = findViewById<View>(R.id.cadabra) as Button
+        outerText = findViewById<View>(R.id.OuterText) as TextView
+        Abra!!.setOnClickListener(this)
+        Cadabra!!.setOnClickListener(this)
+    }
+
+
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.abra ->  // кнопка Abra
+                outerText!!.text = "7894rujdhdh"
+            R.id.cadabra ->  // кнопка Cadabra
+                outerText!!.text = "78flj4j9j78"
+        }
+    }
+}
